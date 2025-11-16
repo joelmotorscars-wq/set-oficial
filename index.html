@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOELMOTORCARS.COM - El Mejor Técnico Automotriz en Islas de la Bahía</title>
+    <link rel="icon" href="https://i.imgur.com/sldgrfq.png" type="image/png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --primary: #8B0000;     /* Rojo oscuro */
+            --secondary: #4A0000;   /* Rojo más oscuro */
+            --accent: #FFFFFF;      /* Blanco */
+            --text: #E8E8E8;        /* Gris claro */
+            --dark-bg: #1A1A1A;     /* Fondo oscuro */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://americanpetroleumpr.com/wp-content/uploads/Motor-gasolina.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            width: 180px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            color: var(--accent);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .location {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .phone {
+            font-size: 1.6rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: var(--secondary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--accent);
+            text-decoration: none;
+            padding: 12px 25px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            display: block;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        #about {
+            background-color: rgba(74, 0, 0, 0.2);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: transform 0.5s;
+        }
+
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .why-best {
+            background-color: var(--secondary);
+            padding: 60px 20px;
+            margin: 60px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .why-best h3 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .best-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .point {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .point:hover {
+            background: var(--primary);
+            transform: translateY(-10px);
+        }
+
+        .point i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        #services {
+            background: linear-gradient(135deg, var(--dark-bg), var(--secondary));
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: all 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(139,0,0,0.3);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        #maintenance {
+            background-color: rgba(26,26,26,0.8);
+        }
+
+        .maintenance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .maint-item {
+            background: var(--secondary);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .maint-item i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .tip-box {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            padding: 30px;
+            border-radius: 15px;
+            margin: 50px 0;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .tip-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #gallery {
+            background-color: var(--dark-bg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(139,0,0,0.9));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        #contact {
+            background: linear-gradient(rgba(26,26,26,0.95), rgba(26,26,26,0.95)), url('https://www.shutterstock.com/image-photo/closeup-shot-unrecognisable-man-wearing-260nw-2470156997.jpg') center/cover;
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-info i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: var(--secondary);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        /* Botón Flotante WhatsApp */
+        .float-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37,211,102,0.5);
+            z-index: 1000;
+            transition: all 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37,211,102,0.7);
+        }
+
+        .float-btn i {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .tagline { font-size: 1.4rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Hero -->
+    <header class="animate__animated animate__fadeIn">
+        <img src="https://i.imgur.com/sldgrfq.png" alt="Logo Joel Motor Cars" class="logo">
+        <h1>JOEL MOTOR CARS</h1>
+        <p class="tagline">Excelencia Automotriz en Islas de la Bahía</p>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Islas de la Bahía, Honduras</p>
+        <p class="phone"><i class="fas fa-phone"></i> 9881-3583</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#about" class="nav-link">Sobre Joel</a>
+            <a href="#services" class="nav-link">Servicios</a>
+            <a href="#maintenance" class="nav-link">Mantenimiento</a>
+            <a href="#gallery" class="nav-link">Galería</a>
+            <a href="#contact" class="nav-link">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title animate__animated animate__fadeInUp">¿Quién es Joel?</h2>
+        <div class="about-grid">
+            <img src="https://autoserviciomitsubishi.com/wp-content/uploads/2022/06/img-reparacion-de-motor-en-medellin-1.jpg" alt="Joel trabajando en taller" class="about-img animate__animated animate__zoomIn">
+            <div class="about-text">
+                <h3>El Mejor Técnico Automotriz de Islas de la Bahía</h3>
+                <p>Con más de <strong>18 años de experiencia</strong> en mecánica automotriz, Joel ha convertido su pasión en una referencia de calidad y confianza en Roatán y alrededores.</p>
+                <p>Certificado en diagnóstico avanzado, reparación de motores japoneses, europeos y americanos, Joel combina tecnología de punta con el conocimiento tradicional del mecánico de confianza.</p>
+                
+                <div class="why-best">
+                    <h3>¿Por Qué Joel es el Mejor?</h3>
+                    <div class="best-points">
+                        <div class="point">
+                            <i class="fas fa-tools"></i>
+                            <h4>Diagnóstico Preciso</h4>
+                            <p>Equipos OBD-II de última generación</p>
+                        </div>
+                        <div class="point">
+                            <i class="fas fa-clock"></i>
+                            <h4>Entrega Rápida</h4>
+                            <p>Reparaciones en tiempo récord sin sacrificar calidad</p>
+                        </div>
+                        <div class="point">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Garantía Real</h4>
+                            <p>3 meses de garantía en mano de obra</p>
+                        </div>
+                        <div class="point">
+                            <i class="fas fa-dollar-sign"></i>
+                            <h4>Precios Justos</h4>
+                            <p>Presupuesto claro, sin sorpresas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card animate__animated animate__fadeInLeft">
+                <img src="https://blog.salfarepuestos.cl/wp-content/uploads/2024/06/mejores-aceite-para-camiones.jpg" alt="Cambio de aceite" class="service-img">
+                <div class="service-content">
+                    <h3>Cambio de Aceite y Filtros</h3>
+                    <p>Aceites sintéticos premium y filtros originales para máxima protección.</p>
+                </div>
+            </div>
+            <div class="service-card animate__animated animate__fadeInUp">
+                <img src="https://www.forotransporteprofesional.es/wp-content/uploads/2021/08/Sistema-de-frenos-de-un-automovil.jpg" alt="Frenos" class="service-img">
+                <div class="service-content">
+                    <h3>Sistema de Frenos</h3>
+                    <p>Discos, pastillas, líquido y purga profesional. Seguridad garantizada.</p>
+                </div>
+            </div>
+            <div class="service-card animate__animated animate__fadeInRight">
+                <img src="https://todomotorpe.com/wp-content/uploads/2023/09/diagnostico.jpg" alt="Diagnóstico electrónico" class="service-img">
+                <div class="service-content">
+                    <h3>Diagnóstico Electrónico</h3>
+                    <p>Escáner profesional para todo tipo de vehículos. Solución exacta al problema.</p>
+                </div>
+            </div>
+            <div class="service-card animate__animated animate__fadeInLeft">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTeuXJqEuQZYfs7fwcems6bDVtXVLD-6usBAmSbsWyT26aKOl3QC-Aatu4ZS-d6ANQipI&usqp=CAU" alt="Suspensión" class="service-img">
+                <div class="service-content">
+                    <h3>Suspensión y Dirección</h3>
+                    <p>Amortiguadores, bujes, alineación 3D. Conducción suave y segura.</p>
+                </div>
+            </div>
+            <div class="service-card animate__animated animate__fadeInUp">
+                <img src="https://media.istockphoto.com/id/157559834/es/foto/motor-de-coche.jpg?s=612x612&w=0&k=20&c=NtnoxB_fC_70XohTcxr-tJB_DmuPmGWxW8lgYoboozI=" alt="Motor" class="service-img">
+                <div class="service-content">
+                    <h3>Reparación de Motor</h3>
+                    <p>Reconstrucción completa, rectificación, tiempo y más.</p>
+                </div>
+            </div>
+            <div class="service-card animate__animated animate__fadeInRight">
+                <img src="https://servifriohn.com/wp-content/uploads/2023/04/Recargando-el-aire-acondicionado-1024x576.webp" alt="Aire acondicionado" class="service-img">
+                <div class="service-content">
+                    <h3>Aire Acondicionado</h3>
+                    <p>Recarga, reparación de compresor, detección de fugas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Benefits -->
+    <section id="maintenance">
+        <h2 class="section-title">Beneficios del Mantenimiento Preventivo</h2>
+        
+        <div class="tip-box">
+            <h3>Consejo Técnico del Día</h3>
+            <p><strong>¿Sabías que?</strong> Cambiar el aceite cada 5,000 km en clima tropical como el de Islas de la Bahía puede <strong>aumentar la vida útil de tu motor en un 40%</strong>. El calor y la humedad aceleran el desgaste.</p>
+        </div>
+
+        <div class="maintenance-grid">
+            <div class="maint-item">
+                <i class="fas fa-gas-pump"></i>
+                <h3>Ahorro de Combustible</h3>
+                <p>Hasta 15% menos consumo con mantenimiento regular</p>
+            </div>
+            <div class="maint-item">
+                <i class="fas fa-car-crash"></i>
+                <h3>Menor Riesgo de Averías</h3>
+                <p>Evita quedarte varado en la carretera</p>
+            </div>
+            <div class="maint-item">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Mayor Valor de Reventa</h3>
+                <p>Vehículos con historial de servicio valen más</p>
+            </div>
+            <div class="maint-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Respeto al Medio Ambiente</h3>
+                <p>Menos emisiones y contaminación</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <h2 class="section-title">Galería de Trabajo</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://www.polisura.edu.co/wp-content/uploads/2025/10/importancia-taller-equipado.jpg" alt="Taller equipado">
+                <div class="overlay">
+                    <h4>Taller Equipado</h4>
+                    <p>Herramientas Snap-on y diagnósticos de última generación</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://st.depositphotos.com/1637787/2927/i/450/depositphotos_29272913-stock-photo-brake-repair.jpg" alt="Trabajo en frenos">
+                <div class="overlay">
+                    <h4>Trabajo en Frenos</h4>
+                    <p>Instalación de discos Brembo</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.morepamotor.es/wp-content/uploads/2024/01/cambio-aceite.jpg" alt="Cambio de aceite">
+                <div class="overlay">
+                    <h4>Servicio Express</h4>
+                    <p>Cambio de aceite en 20 minutos</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://img.freepik.com/fotos-premium/mano-mecanico-usando-herramienta-diagnostico-conectada-motor-automoviles-pantalla-herramientas-muestra-datos_51530-13811.jpg?semt=ais_incoming&w=740&q=80" alt="Diagnóstico">
+                <div class="overlay">
+                    <h4>Diagnóstico Avanzado</h4>
+                    <p>Lectura de códigos en tiempo real</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> <strong>9881-3583</strong></p>
+            <p><i class="fas fa-map-marker-alt"></i> Principal calle, cerca del muelle - Islas de la Bahía</p>
+            <p><i class="fas fa-clock"></i> Lunes a Sábado: 7:00 AM - 6:00 PM</p>
+        </div>
+        <p style="font-size: 1.2rem; color: var(--primary);">¡Agenda tu cita hoy mismo!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 JOELMOTORCARS.COM - Todos los derechos reservados</p>
+        <p>Desarrollado con pasión por el mejor mecánico de Islas de la Bahía</p>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/50498813583?text=Hola%20Joel,%20quiero%20agendar%20una%20cita%20para%20mi%20vehículo" class="float-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animaciones al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        });
+
+        document.querySelectorAll('.service-card, .point, .maint-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
